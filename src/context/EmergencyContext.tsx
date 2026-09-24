@@ -86,9 +86,9 @@ export function EmergencyProvider({ children }: { children: ReactNode }) {
   const [userRole, setUserRole] = useState<UserRole>('OPERATOR');
   const [filterHazard, setFilterHazard] = useState<HazardType | 'ALL'>('ALL');
   
-  // Map coordinates state
-  const [mapCenter, setMapCenter] = useState<[number, number]>([19.0688, 72.8715]);
-  const [mapZoom, setMapZoom] = useState<number>(14);
+  // Map coordinates state (Andhra Pradesh Kalingapatnam Cyclone Belt)
+  const [mapCenter, setMapCenter] = useState<[number, number]>([18.3400, 84.1200]);
+  const [mapZoom, setMapZoom] = useState<number>(13);
 
   // Network & Offline Mode
   const [networkStatus, setNetworkStatus] = useState<NetworkStatus>('ONLINE');
@@ -98,27 +98,27 @@ export function EmergencyProvider({ children }: { children: ReactNode }) {
     {
       id: 'notif-1',
       type: 'CRITICAL',
-      title: 'Level-4 Urban Inundation Alert',
-      message: 'Mithi River Basin water level crossed 5.2m. Kurla Sector A under immediate threat.',
-      timestamp: '17:21:03',
+      title: 'IMD Red Alert: Bay of Bengal Deep Depression Landfall',
+      message: 'Cyclone crossing coast near Kalingapatnam, Srikakulam with 78 km/h gale gusts. Storm surge 3.4m.',
+      timestamp: '14:02:11',
       incidentId: 'inc-001',
       read: false
     },
     {
       id: 'notif-2',
-      type: 'WARNING',
-      title: 'Road Access Restriced',
-      message: 'LBS Marg arterial corridor inundated. Diverting emergency logistics to EEH.',
-      timestamp: '17:22:45',
-      incidentId: 'inc-001',
+      type: 'CRITICAL',
+      title: 'Vijayawada Budameru Inundation Alert',
+      message: 'Budameru diversion breach submerged Ajit Singh Nagar & Payakapuram. 86,000 citizens impacted.',
+      timestamp: '14:03:45',
+      incidentId: 'inc-002',
       read: false
     },
     {
       id: 'notif-3',
       type: 'SUCCESS',
-      title: 'Relief Center Activated',
-      message: 'Don Bosco Youth Shelter (600 cap) ready with standby medical surge posts.',
-      timestamp: '17:24:10',
+      title: 'Kalingapatnam Cyclone Sanctuary CS-01 Activated',
+      message: '1,500-capacity reinforced shelter ready with medical surge posts and food supplies.',
+      timestamp: '14:06:10',
       incidentId: 'inc-001',
       read: true
     }
@@ -326,23 +326,23 @@ export function EmergencyProvider({ children }: { children: ReactNode }) {
     setDemoStep(1);
 
     const steps = [
-      { step: 1, title: '1. Normal State Baseline', desc: 'Continuous environmental IoT monitoring and satellite telemetry active across sectors.' },
-      { step: 2, title: '2. Sensor Anomaly Trigger', desc: 'Sonar gauge #SN-01 detects unexpected +1.8m surge beyond safe hydraulic thresholds.' },
-      { step: 3, title: '3. Radar Sweep & Geofence', desc: 'Synthetic Aperture Radar (SAR) sweep demarcates anomalous high-reflectivity basin.' },
-      { step: 4, title: '4. Multi-Stream AI Verification', desc: 'Cross-verifying 42 citizen tweets, CCTV water detection, and Doppler rainfall.' },
-      { step: 5, title: '5. Incident Confirmed (CRITICAL)', desc: 'AI Verification Engine confirms Level-4 Urban Flash Flood with 94% statistical confidence.' },
-      { step: 6, title: '6. NEXUS Risk Score Computed', desc: 'Composite multi-dimensional algorithm escalates Risk Score to 88/100 (CRITICAL).' },
-      { step: 7, title: '7. Affected Polygon Rendered', desc: 'Digital Twin computes 1,850m radius inundation envelope with hydrodynamic flow velocity.' },
-      { step: 8, title: '8. Population Impact Evaluated', desc: 'Geospatial census layer calculates 8,420 citizens and 1,240 structures at direct risk.' },
-      { step: 9, title: '9. AI Emergency Commander Strategy', desc: 'Autonomous Commander synthesizes 5 deterministic action protocols for human confirmation.' },
-      { step: 10, title: '10. Optimal Route Calculated', desc: 'High-speed arterial evacuation path generated avoiding submerged LBS Marg underpasses.' },
-      { step: 11, title: '11. Ambulance Unit A-12 Assigned', desc: 'Automated nearest-unit dispatch assigns Ambulance A-12 with 6-minute ETA.' },
-      { step: 12, title: '12. NDRF Boat Squad Deployed', desc: 'Battalion Unit 05 activated with motorized inflatable boats for stranded bus clusters.' },
-      { step: 13, title: '13. Don Bosco Shelter Reserved', desc: 'Relief Shelter S-02 prepared with 600 emergency beds and clean drinking water.' },
-      { step: 14, title: '14. Multilingual Citizen Broadcast', desc: 'High-priority voice and SMS alerts broadcast in English, Marathi, and Hindi.' },
-      { step: 15, title: '15. Evacuation Corridors Activated', desc: 'Real-time LED road signs and police traffic units seal flooded entry points.' },
-      { step: 16, title: '16. Live Operational Status: ACTIVE', desc: 'Unified incident command dashboard reaches coordinated deployment status.' },
-      { step: 17, title: '17. NEXUS Response Completed', desc: 'Containment perimeter stabilized; 8,421 citizens safeguarded with zero fatal delays.' }
+      { step: 1, title: '1. Normal Coastal Baseline', desc: 'Continuous environmental IoT monitoring and IMD Doppler radar active across North Andhra.' },
+      { step: 2, title: '2. Deep Depression Anomaly Trigger', desc: 'Barometric sensor #SN-AP-01 plunges 14 hPa; Kalingapatnam tide station flags +3.4m storm surge.' },
+      { step: 3, title: '3. Radar Sweep & Coastal Geofence', desc: 'Doppler Cyclone radar sweep demarcates eye wall convective band crossing Srikakulam coastline.' },
+      { step: 4, title: '4. Multi-Stream AI Verification', desc: 'Cross-verifying 64 citizen distress calls, CCTV harbor cameras, and IMD Amaravati radar.' },
+      { step: 5, title: '5. Incident Confirmed (CRITICAL)', desc: 'AI Verification Engine confirms Bay of Bengal Cyclone Landfall with 96% statistical confidence.' },
+      { step: 6, title: '6. NEXUS Risk Score Computed', desc: 'Composite multi-dimensional algorithm escalates Risk Score to 94/100 (CRITICAL RED ALERT).' },
+      { step: 7, title: '7. Affected Polygon Rendered', desc: 'Digital Twin computes 3,800m coastal inundation envelope with hydrodynamic surge velocities.' },
+      { step: 8, title: '8. Population Impact Evaluated', desc: 'Geospatial census layer calculates 24,500 coastal residents and 4,100 structures at immediate risk.' },
+      { step: 9, title: '9. AI Emergency Commander Strategy', desc: 'Autonomous Commander synthesizes 5 deterministic action protocols for collectorate authorization.' },
+      { step: 10, title: '10. Optimal Evacuation Route Calculated', desc: 'High-elevation corridor Route 16-A generated avoiding submerged coastal bridges.' },
+      { step: 11, title: '11. 108 ALS Ambulance Assigned', desc: 'Automated nearest-unit dispatch assigns Ambulance #AP-VZG-12 with 6-minute ETA.' },
+      { step: 12, title: '12. NDRF 10th Battalion Deployed', desc: 'Battalion Unit 04 activated with motorized inflatable rescue boats and hydraulic saws.' },
+      { step: 13, title: '13. Cyclone Shelter CS-01 Reserved', desc: 'Kalingapatnam Reinforced Sanctuary prepared with 1,500 beds, food packets, and solar gensets.' },
+      { step: 14, title: '14. Multilingual Citizen Broadcast', desc: 'High-priority voice and SMS alerts broadcast in Telugu (తెలుగు) and English across mobile towers.' },
+      { step: 15, title: '15. Port Warning Signal 7 Hoisted', desc: 'State police and coastal marine units seal beach roads and secure 840 fishing trawlers.' },
+      { step: 16, title: '16. Live Operational Status: ACTIVE', desc: 'Unified district emergency command center reaches coordinated deployment status.' },
+      { step: 17, title: '17. NEXUS Response Completed', desc: 'Coastal perimeter stabilized; 24,500 citizens safeguarded with zero preventable loss of life.' }
     ];
 
     let currentIdx = 0;
